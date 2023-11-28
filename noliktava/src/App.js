@@ -1,10 +1,11 @@
 import './App.css';
+import Darbinieks from './component/darbinieks';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <>
+        <Darbinieks />
+    </>
   );
 }
 
