@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.preces-main{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plaukts{
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.preces-box {
+    display: flex;
+    flex: 40%;
+    max-width: 280px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+}
+
+.preces-box img{
+    width: 170px;
+}
+
+.dati{
+    font-family: 'Inknut Antiqua', serif, 'Merriweather', serif;
+    font-size: 15px;
+    margin: -5px;
+    font-weight: 400;
+}

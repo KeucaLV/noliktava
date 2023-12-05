@@ -1,4 +1,4 @@
-import "./darbinieks.css";
+import "../styles/darbinieks.css";
 
 function Darbinieks() {
     return (

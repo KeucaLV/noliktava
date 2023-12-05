@@ -1,4 +1,4 @@
-import "./pievienot.css";
+import "../styles/pievienot.css";
 
 function Pievienot() {
     return (
