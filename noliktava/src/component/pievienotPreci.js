@@ -12,7 +12,7 @@ function Pievienot() {
                     <input placeholder="Nosaukums"/>
                     <input placeholder="Ražotājs"/>
                     <textarea placeholder="Tehniskais Apraksts"></textarea>
-                    <input placeholder="Cena €"/>
+                    <input type="number" placeholder="Cena €"/>
                     <button className="pievienot-Preci-Btn">Pievienot</button>
                 </div>
             </div>

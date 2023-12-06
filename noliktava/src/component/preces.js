@@ -21,14 +21,21 @@ function Preces() {
             productName: "ASUS ROG Ryujin",
             quantity: 2,
             price: "300€",
-            imageUrl: "https://cdn.tet.lv/tetveikals-prd-images/product_popup_image/products/ld0005904386-1-620bb10cce689.jpg"
+            imageUrl: "https://www.dateks.lv/images/pic/2400/2400/352/1110.jpg"
         },
         {
             id: 4,
             productName: "Alpine 23",
             quantity: 10,
             price: "30€",
-            imageUrl: "https://www.arctic.de/media/a4/0e/3b/1610439307/alpine-23-co-g05.jpg"
+            imageUrl: "https://www.arctic.de/media/d4/c0/ee/1607343612/alpine-23-g00.png"
+        },
+        {
+            id: 5,
+            productName: "Radeon RX6800",
+            quantity: 3,
+            price: "435€",
+            imageUrl: "https://static.gigabyte.com/StaticFile/Image/Global/1c24cc7f50ab47464a78ee4a43ac2a78/Product/26401/Png"
         },
     ];
 
@@ -36,20 +43,20 @@ function Preces() {
         <>
         <div className="headerSub"></div>
         <div className="preces-main">
-            <h1>1. Plaukts</h1>
-            <div className="plaukts" >
+
             {precesData.map((prece) => (
                 <>
-                    <div className="preces-box">
+                    <div className="flex-row">
                         <img src={prece.imageUrl} alt={`Product ${prece.id}`} />
                         <h2 className="dati">{prece.productName}</h2>
                         <h2 className="dati">Daudzums: {prece.quantity} gab.</h2>
                         <h2 className="dati">Cena: {prece.price}</h2>
+                        <button>Rediģēt</button>
+                        <button>Dzēst</button>
                     </div>
-                    <div className="vertical-line"></div>
+
                 </>
             ))}
-        </div>
         </div>
         </>
     );
