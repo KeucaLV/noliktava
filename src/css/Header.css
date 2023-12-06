@@ -9,6 +9,7 @@
   align-items: center;
   position: fixed;
   border-bottom: 1px solid black;
+  z-index: 5;
 }
 
 .logo img {
