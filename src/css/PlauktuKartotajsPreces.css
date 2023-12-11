@@ -1,0 +1,72 @@
+.PlauktuKartotajsPreces{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 125px);
+    margin-top: 125px;
+    align-items: center;
+}
+.nez{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Updated CSS */
+.Preces {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    grid-template-rows: repeat(2, 1fr); /* Two equal rows */
+    width: 1650px;
+    height: 600px;
+    border-radius: 6px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    margin-top: 75px;
+    position: relative; /* Add relative position for pseudo-elements */
+  }
+  
+  /* Vertical lines */
+  .Preces::before,
+  .Preces::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid #ccc;
+  }
+  
+  /* Horizontal line */
+  .Preces::before {
+    left: calc(33.333%); /* Adjust position of first vertical line */
+  }
+  
+  .Preces::after {
+    left: calc(66.666%); /* Adjust position of second vertical line */
+    height: 100%; /* Ensure full height */
+  }
+  
+  
+  .SearchContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  .SearchInput {
+    padding: 8px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+  }
+  
+  .Dropdown {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px;
+  }
