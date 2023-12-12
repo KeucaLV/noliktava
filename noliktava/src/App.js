@@ -8,9 +8,9 @@ function App() {
   return (
     <>
         {/*<Darbinieks />*/}
-      {/*<Pievienot />*/}
+      <Pievienot />
       {/*  <Pasutit />*/}
-        <Preces />
+      {/*  <Preces />*/}
     </>
   );
 }

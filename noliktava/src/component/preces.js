@@ -51,8 +51,8 @@ function Preces() {
                         <h2 className="dati">{prece.productName}</h2>
                         <h2 className="dati">Daudzums: {prece.quantity} gab.</h2>
                         <h2 className="dati">Cena: {prece.price}</h2>
-                        <button>Rediģēt</button>
-                        <button>Dzēst</button>
+                        <button className="edit-preces">Rediģēt</button>
+                        <button className="delete-preces">Dzēst</button>
                     </div>
 
                 </>

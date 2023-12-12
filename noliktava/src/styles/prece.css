@@ -49,6 +49,30 @@ img{
 
 }
 
+.delete-preces, .edit-preces {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.edit-preces:hover {
+    background-color: #2d7d2f;
+}
+
+.delete-preces {
+    background-color: #f44336;
+}
+
+.delete-preces:hover {
+    background-color: #cc1204;
+}
+
 .flex-row{
     display: flex;
     justify-content: space-evenly;
@@ -56,11 +80,21 @@ img{
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    margin: 10px;
 }
 
 .dati{
     font-family: 'Inknut Antiqua', serif, 'Merriweather', serif;
-    font-size: 15px;
+    font-size: 17px;
     margin: -5px;
     font-weight: 400;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .flex-row{
+        flex-direction: column;
+    }
+
+
 }
