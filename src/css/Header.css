@@ -33,13 +33,14 @@
   font-family: 'Inknut Antiqua', serif;
 }
 
-  @media (max-width: 768px) {
+  @media (max-width: 890px) {
     .logo img{
       display: none
     }
 
     .header{
       display: flex;
+      align-items: center;
       gap: 5px;
     }
 
@@ -52,10 +53,69 @@
       color: black;
       border: none;
       cursor: pointer;
-      font-size: 20px;
+      font-size: 2.5rem;
       background-color: inherit;
       font-family: 'Inknut Antiqua', serif;
     }
   }
 
+  @media (max-width: 750px) {
+    .header-buttons button {
+      font-size: 2rem;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+      margin-right: 15%;
+    }
+  }
+
+  
+  @media (max-width: 650px) {
+    .header-buttons button {
+      font-size: 1.75rem;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+      margin-right: 15%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .header-buttons button {
+      font-size: 1.5rem;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+      margin-right: 10%;
+    }
+  }
+
+  @media (max-width: 355px) {
+    .header-buttons button {
+      font-size: 1.35rem;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
 

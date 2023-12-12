@@ -9,42 +9,42 @@
 .nez{
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-/* Updated CSS */
 .Preces {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    grid-template-rows: repeat(2, 1fr); /* Two equal rows */
-    width: 1650px;
-    height: 600px;
-    border-radius: 6px;
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-    margin-top: 75px;
-    position: relative; /* Add relative position for pseudo-elements */
-  }
-  
-  /* Vertical lines */
-  .Preces::before,
-  .Preces::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    border-left: 1px solid #ccc;
-  }
-  
-  /* Horizontal line */
-  .Preces::before {
-    left: calc(33.333%); /* Adjust position of first vertical line */
-  }
-  
-  .Preces::after {
-    left: calc(66.666%); /* Adjust position of second vertical line */
-    height: 100%; /* Ensure full height */
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 90vw;
+  max-width: 1650px;
+  height: auto; 
+  border-radius: 6px;
+  box-shadow: 0 -8px 12px rgba(0, 0, 0, 0.1), 0 12px 20px rgba(0, 0, 0, 0.6);
+  margin-top: 75px;
+  position: relative;
+  overflow-y: auto;
+  margin-bottom: 25px;
+}
+
+.item {
+  min-height: 300px;
+  padding: 10px;
+  box-sizing: border-box; 
+  border-bottom: 1px solid black;
+}
+
+.Preces > * {
+  box-sizing: border-box;
+}
+
+.Preces > :nth-child(3n + 1) {
+  border-right: 1px solid black;
+}
+
+.Preces > :nth-child(3n + 2) {
+  border-right: 1px solid black;
+}
   
   .SearchContainer {
     display: flex;
@@ -52,7 +52,7 @@
     align-items: center;
     padding: 20px;
     background-color: #f0f0f0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #000000;
     width: 100%;
   }
   
@@ -61,12 +61,92 @@
     margin-right: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 200px;
+    width: 250px;
   }
   
   .Dropdown {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 150px;
+    width: 250px;
+  }
+
+  option{
+    width: 100%;
+  }
+
+  @media (max-width: 1100px) {  
+    .SearchContainer {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px; 
+    }
+
+    .SearchInput,
+    .Dropdown {
+      margin-top: 5px;
+      width: 85%;
+    }
+  
+    .SearchInput {
+      margin-right: 0;
+    }
+  }
+
+
+  @media (max-width: 1300px) {
+    .Preces {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      min-height: 1000px;
+      height: auto;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      margin-top: 25px;
+    }
+  
+    .Preces > * {
+      border-right: none;
+      border-bottom: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .Preces > :nth-child(3n + 1) {
+      border-right: 1px solid black;
+    }
+    .Preces > :nth-child(2n + 1) {
+      border-right: 1px solid black;
+    }
+    .Preces > :nth-child(2n + 2) {
+      border-right: none;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .Preces {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      min-height: 1000px;
+      height: auto;
+      overflow-y: scroll; 
+      overflow-x: hidden;
+      margin-top: 25px;
+    }
+  
+    .Preces > * {
+      border-right: none;
+    }
+
+    .Preces > :nth-child(3n + 1) {
+      border-right: none;
+    }
+    
+    .Preces > :nth-child(3n + 2) {
+      border-right: none;
+    }
+    .Preces > :nth-child(3n + 3) {
+      border-right: none;
+    }
   }
