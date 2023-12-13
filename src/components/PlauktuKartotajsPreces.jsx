@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/PlauktuKartotajsPreces.css';
 
 function PlauktuKartotajsPreces() {
+  const navigate = useNavigate();
+
+  const handleEditClick = (id) => {
+    navigate(`/precesEdit/${id}`);
+  };
+
+  const handleMoreClick = (id) => {
+    navigate(`/precesMore/${id}`);
+  };
+
+  const [preces, setPreces] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost/noliktava_php/GetAllPreces.php')
+      .then((response) => response.json())
+      .then((data) => {
+        setPreces(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
   return (
     <div className="nez">
         <div className="PlauktuKartotajsPreces">
@@ -21,15 +45,30 @@ function PlauktuKartotajsPreces() {
                 </select>
             </div>
             <div className="Preces">
-              <div className="item">1</div>
-              <div className="item">2</div>
-              <div className="item">3</div>
-              <div className="item">4</div>
-              <div className="item">5</div>
-              <div className="item">6</div>
-              <div className="item">7</div>
-              <div className="item">8</div>
-              <div className="item">9</div>
+              {preces.map((prece) => (
+                <div className="item" key={prece.id}>
+                  <div className="ItemCredentials">
+                    <div className="ItemTitle">
+                      <h1>{prece.nosaukums}</h1>
+                    </div>
+                    <div className="ItemInfo">
+                      <div className="Column">
+                        <p><strong>Razotājs:</strong> {prece.razotajs}</p>
+                        <p><strong>Kategorija:</strong> {prece.kategorija}</p>
+                      </div>
+                      <div className="Column">
+                        <p><strong>Daudzums:</strong> {prece.daudzums}</p>
+                        <p><strong>Plaukts:</strong> {prece.plaukts}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="ItemButtons">
+                    <button className="EditButton" onClick={handleEditClick}>Rediģēt</button>
+                    <button className="MoreButton" onClick={() => handleMoreClick(prece.id)}>Vairāk</button>
+                  </div>
+                </div>
+              ))}
             </div>
         </div>
     </div>
