@@ -22,7 +22,6 @@ function Pasutit() {
         try {
             const response = await fetch("http://localhost/datubazes/noliktava/selectFirma.php");
             const data = await response.json();
-            // Filter out duplicate manufacturers
             const uniqueManufacturers = [...new Set(data)];
             setManufacturers(uniqueManufacturers);
         } catch (error) {
@@ -65,10 +64,41 @@ function Pasutit() {
         }
     };
 
+    const handleDownloadPdf = async () => {
+        try {
+            const now = new Date();
+            const day = now.toLocaleString('en-US', { day: '2-digit' });
+            const month = now.toLocaleString('en-US', { month: '2-digit' });
+            const year = now.toLocaleString('en-US', { year: 'numeric' });
+            const formattedTimestamp = `${month}/${day}/${year}`;
+
+            const pdfName = `${formattedTimestamp}_Pasūtijumi.pdf`;
+
+            const response = await fetch("http://localhost/datubazes/noliktava/fpdf/convert-pdf.php");
+            const blob = await response.blob();
+
+            const url = window.URL.createObjectURL(new Blob([blob]));
+
+            const link = document.createElement("a");
+            link.href = url;
+            link.setAttribute("download", pdfName);
+
+            document.body.appendChild(link);
+            link.click();
+
+            document.body.removeChild(link);
+        } catch (error) {
+            console.error("Error downloading PDF:", error);
+        }
+    };
+
     return (
         <div>
             <div className="headerSub"></div>
             <div className="pievienotMain">
+                <button className="pdfBtn" onClick={handleDownloadPdf}>
+                    Download PDF
+                </button>
                 <h1 className="pievienotMessage">Pasūtīt preci!</h1>
                 <div className="pasutit-Preci-Box">
                     <select onChange={handleManufacturerChange} value={selectedManufacturer}>
