@@ -16,9 +16,6 @@ function Header() {
         <Link to="/preces" className="header-link">
           <button>Preces</button>
         </Link>
-        <Link to="/atskaites" className="header-link">
-          <button>Atskaites</button>
-        </Link>
       </div>
     </div>
   );

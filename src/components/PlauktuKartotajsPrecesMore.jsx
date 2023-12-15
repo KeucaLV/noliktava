@@ -39,7 +39,7 @@ function PlauktuKartotajsPrecesMore() {
                 <p><strong>Kategorija:</strong> {item.kategorija}</p>
                 <p><strong>Daudzums:</strong> {item.daudzums}</p>
                 <p><strong>Plaukts:</strong> {item.plaukts}</p>
-                <p><strong>Cena:</strong> {item.cena}</p>
+                <p><strong>Cena:</strong> {item.cena} </p>
               </div>
             </div>
           )}

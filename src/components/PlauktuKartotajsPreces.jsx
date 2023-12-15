@@ -28,49 +28,45 @@ function PlauktuKartotajsPreces() {
 
   return (
     <div className="nez">
-        <div className="PlauktuKartotajsPreces">
-            <div className="SearchContainer">
-                <input type="text" placeholder="Meklēt..." className="SearchInput" />
-
-                <select className="Dropdown">
-                <option value="plaukts">Plaukts</option>
-                </select>
-
-                <select className="Dropdown">
-                <option value="kategorija">Kategorija</option>
-                </select>
-
-                <select className="Dropdown">
-                <option value="kartot">Kārtot</option>
-                </select>
-            </div>
-            <div className="Preces">
-              {preces.map((prece) => (
-                <div className="item" key={prece.id}>
-                  <div className="ItemCredentials">
-                    <div className="ItemTitle">
-                      <h1>{prece.nosaukums}</h1>
-                    </div>
-                    <div className="ItemInfo">
-                      <div className="Column">
-                        <p><strong>Razotājs:</strong> {prece.razotajs}</p>
-                        <p><strong>Kategorija:</strong> {prece.kategorija}</p>
-                      </div>
-                      <div className="Column">
-                        <p><strong>Daudzums:</strong> {prece.daudzums}</p>
-                        <p><strong>Plaukts:</strong> {prece.plaukts}</p>
-                      </div>
-                    </div>
+      <div className="PlauktuKartotajsPreces">
+        <div className="SearchContainer">
+          <input type="text" placeholder="Meklēt..." className="SearchInput" />
+          <select className="Dropdown">
+            <option value="plaukts">Plaukts</option>
+          </select>
+          <select className="Dropdown">
+            <option value="kategorija">Kategorija</option>
+          </select>
+          <select className="Dropdown">
+            <option value="kartot">Kārtot</option>
+          </select>
+        </div>
+        <div className="Preces">
+          {preces.map((prece) => (
+            <div className="item" key={prece.id}>
+              <div className="ItemCredentials">
+                <div className="ItemTitle">
+                  <h1>{prece.nosaukums}</h1>
+                </div>
+                <div className="ItemInfo">
+                  <div className="Column">
+                    <p><strong>Razotājs:</strong> {prece.razotajs}</p>
+                    <p><strong>Kategorija:</strong> {prece.kategorija}</p>
                   </div>
-
-                  <div className="ItemButtons">
-                    <button className="EditButton" onClick={handleEditClick}>Rediģēt</button>
-                    <button className="MoreButton" onClick={() => handleMoreClick(prece.id)}>Vairāk</button>
+                  <div className="Column">
+                    <p><strong>Daudzums:</strong> {prece.daudzums}</p>
+                    <p><strong>Plaukts:</strong> {prece.plaukts}</p>
                   </div>
                 </div>
-              ))}
+              </div>
+              <div className="ItemButtons">
+                <button className="EditButton" onClick={() => handleEditClick(prece.id)}>Rediģēt</button>
+                <button className="MoreButton" onClick={() => handleMoreClick(prece.id)}>Vairāk</button>
+              </div>
             </div>
+          ))}
         </div>
+      </div>
     </div>
   );
 }
