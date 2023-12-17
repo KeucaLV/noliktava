@@ -1,0 +1,1181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300&display=swap');* {
+    margin: 0;
+    padding: 0;
+}
+
+.login-main {
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.User-main{
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #DFE3E3;
+}
+.user-info.user-last-name {
+   width:100%;
+    margin-left: 5px; /* Adjust the margin as needed */
+  }
+  
+.user-lietotaji{
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 35px;
+}
+.user-text{
+    width:90%;
+    height:5vh;
+    display:flex;
+    justify-content: left;
+    margin-bottom:10px;
+}
+.user-center{
+    width:90%;
+    height:90vh;
+    display:flex;
+    background-color: #F4F5F6;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+.user-custom-dropdown{
+    width:100%;
+}
+.user-dropdown{
+    width:100%;
+    height:7vh;
+    border:none;
+    border-radius:7.5px;
+    background-color: #FBCE60;
+    font-size: 0.8em; /* Set font size using em */
+    overflow: hidden; /* Hide content that overflows the container */
+    font-family: 'Inknut Antiqua', sans-serif;
+    color:#1F4136;
+    text-align: center;
+    margin-top:5px;
+}
+.edit-user-h2{
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size:35px;
+}
+.edit-modal{
+    width:100%;
+    height:100vh;
+    position:absolute;
+    display:flex;
+    align-items: center;
+    background-color: #DFE3E3;
+    flex-direction:column;
+
+}
+.user-button{
+    background-color: #FF0000;
+    border:none;
+    border-radius:7.5px;
+    height:7vh;
+    width:80%;
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 1em; /* Set font size using em */
+    overflow: hidden; /* Hide content that overflows the container */
+    color:#000000;
+}
+.user-button-edit{
+    background-color: transparent;
+    border:none;
+    border-radius:7.5px;
+    height:7vh;
+    width:80%;
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 1em; /* Set font size using em */
+    overflow: hidden; /* Hide content that overflows the container */
+    color:#000000;
+}
+.user-button-saglabat{
+    width:90%;
+    height:5vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:transparent;
+}
+
+.user-button-save{
+    border:none;
+    background-color:#FBCE60;
+    height:5vh;
+    width:20%;
+    border-radius:5px;
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size:15px;
+    margin-bottom:15px;
+}
+.dropdown-arrow1 {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust the right spacing as needed */
+    transform: translateY(-50%);
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #000; /* Adjust the color as needed */
+    pointer-events: none; /* Make sure the arrow doesn't interfere with select element */
+}
+.user-custom-dropdown {
+    position: relative;
+  }
+  
+  .user-dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 20px; /* Adjust as needed */
+  }
+.user-name{
+    width:25%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 1em; /* Set font size using em */
+    overflow: hidden; /* Hide content that overflows the container */
+    color:#5F5F5F;
+    margin:2px;
+}
+.user-center-info-container{
+    width:80%;
+    height:8vh;
+    display:flex;
+    background-color: #FFFFFF;
+    margin-top:25px;
+    border-radius:5px;
+}
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust the right distance based on your design */
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.admin-main {
+    width:100%;
+    display:flex;
+    height:100vh;
+    background-color: #B4B8AB;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-box-one{
+    width: 100%;
+    height:40vh;
+    background-color: #284B63;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.admin-box-two{
+    width:100%;
+    height:60vh;
+    display:flex;
+    justify-content: center;
+}
+.admin-center-box{
+    width:90%;
+    height:90vh;
+    display:flex;
+    background-color: #EEF0EB;
+    margin-top:500px;
+    align-items: center;
+    flex-direction: column;
+}
+.admin-top {
+    display: flex;
+    justify-content: left;
+    width: 80%;
+    height: 5vh;
+    text-align: left;
+    position: relative; 
+    margin-top:20px;
+  }
+  
+  .admin-top::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: #000; 
+  }
+.admin-information{
+    width:100%;
+    height:60vh;
+    display:flex;
+    justify-content: center;
+    background-color: #EEF0EB;
+}
+.admin-info-box{
+    width:30%;
+    height:50vh;
+    display:flex;
+    justify-content: center;
+    background-color:#D9D9D9;
+    margin:15px;
+    flex-direction: column;
+}
+.admin-icon-box{
+    width:100%;
+    height:40vh;
+    display:flex;
+    justify-content: center;
+    background-image: url('../images/user.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:120px;
+}
+/* Add this style to your CSS file */
+.settings-icon {
+    background: url('../images/close.png') left center no-repeat;
+    background-size: 20px; /* Adjust the size of the background image */
+   margin-left:20px;
+    padding-right: 30px; /* Adjust the padding to leave space between the icon and text */
+  }
+  .user-roles-text{
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size:20px;
+    color:#5A7879;
+  }
+  .user-roles-container{
+    width:75%;
+    height:5vh;
+    background-color:#FFFFFF;
+    margin-top:40px;
+    /* outline: 1px solid #D9D9D9; */
+    border-radius:5px;
+    display:flex;
+    margin-bottom:10px;
+  }
+  .user-counter {
+    width: 90%;
+    height: 5vh;
+    background-color: #FAFAFA;
+    display: flex;
+    font-family: 'Inknut Antiqua', sans-serif;
+    justify-content: left;
+    color: #5A7879;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+  .user-search-bar-container{
+    width:64%;
+    height:5vh;
+    display:flex;
+    background-color:transparent;
+    justify-content: right;
+    margin-top:40px;
+    position: relative;
+  }
+  .user-search-bar-input {
+    border-radius:5px;
+    border: 2px solid #D9D9D9;
+    width:250px;
+}
+  .user-info-email {
+    margin-left: 10px; /* Adjust as needed */
+    font-size: 14px; /* Adjust font size as needed */
+    color: #555; /* Adjust color as needed */
+}
+  
+  .user-roles-inside{
+    width:25%;
+    height:5vh;
+    display:flex;
+    justify-content: center;
+    color:#284B63;
+  }
+  .user-roles-inside1{
+    width:47%;
+    height:5vh;
+    display:flex;
+    justify-content: center;
+    color:#284B63;
+  }
+  
+.admin-icon-box1{
+    width:100%;
+    height:40vh;
+    display:flex;
+    justify-content: center;
+    background-image: url('../images/fast-delivery.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:120px;
+}
+.admin-icon-box2{
+    width:100%;
+    height:40vh;
+    display:flex;
+    justify-content: center;
+    background-image: url('../images/contact.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:120px;
+}
+
+.admin-text-box{
+    width:100%;
+    height:10vh;
+    justify-content: center;
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size:20px;
+}
+  
+p100{
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size:25px;
+
+}
+.new-user-text-input{
+    width:90%;
+    height:2vh;
+    text-align: left;
+    color:#5F5F5F;
+    font-size:20px;
+    margin-top:8px;
+    font-family: 'Inknut Antiqua', sans-serif;
+}
+.new-user-button{
+    width:100%;
+    height:6vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.new-user-button-style {
+    width: 30%;
+    height: 4vh;
+    border-radius: 8px;
+    border: none;
+    background-color: #D9D9D9;
+    position: relative;
+    font-family: 'Inknut Antiqua', sans-serif;
+}
+
+.new-user-button-style::after {
+    content: '';
+    position: absolute;
+    width: 50%; /* Adjust the width of the line */
+    height: 1px;
+    background-color: #000;
+    bottom: 9px; /* Adjust this value to control the gap between text and line */
+    left: 25%; /* Center the line within the button */
+}
+.custom-dropdown {
+    position: relative;
+    width: 100%; 
+}
+
+.dropdown-arrow {
+    position: absolute;
+    top: 60%;
+    right: 25px; /* Adjust the right spacing as needed */
+    transform: translateY(-50%);
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #000; /* Adjust the color as needed */
+    pointer-events: none; /* Make sure the arrow doesn't interfere with select element */
+}
+
+.custom-dropdown select {
+    width: 90%;
+    padding-right: 30px; /* Adjust the padding to make space for the arrow */
+    -webkit-appearance: none; /* Remove default arrow in Chrome/Safari */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    appearance: none; /* Remove default arrow in other browsers */
+    font-family: 'Inknut Antiqua', sans-serif;
+}
+
+.custom-dropdown::after {
+    display: none; 
+}
+
+.new-user-body{
+    width:100%;
+    height:100vh;
+    background-color:#FFFFFF;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.new-user-input{
+    margin-top:20px;
+    width:90%;
+    height:6vh;
+    background-color:#FFFFFF;
+    border:none;
+    font-family: 'Inknut Antiqua', sans-serif;
+
+    
+}
+.new-user-top{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+.new-user-main{
+    width:30%;
+    height:80vh;
+    display:flex;
+    align-items: center;
+    background-color:#F4F5F6;
+    flex-direction: column;
+    margin:10px;
+    border-radius:5px;
+}
+.click-save-button{
+    width:100%;
+    height:3vh;
+    background-color: #D9D9D9;
+    border:none;
+    border-radius:2.5px;
+}
+.edit-save-button{
+    margin-top:20px;
+    width:100px;
+    height:3vh;
+}
+.edit-save-button button:hover .underline-text {
+    text-decoration: underline;
+}
+
+/* Optional: Style the underline for better visibility */
+.edit-save-button button:hover .underline-text::after {
+    content: "";
+    display: block;
+    height: 2px; /* Adjust the height of the underline */
+    width: 100%;
+    background-color: your_underline_color; /* Change this to your desired color */
+}
+
+
+.new-user-h1{
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size:30px;
+    text-align: center;
+}
+
+.inputFIREGISTER {
+    width: 100%;
+    height: 15%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+.inputFIREGISTER input {
+    height: 32px;
+    border-radius: 6px;
+    background-color: #EDEFF2;
+    width: 70%;
+    padding-left: 40px;
+    border: none;
+}
+
+.inputFIREGISTER input::placeholder {
+    opacity: 0.5;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.inputFIREGISTER .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.inputFIREGISTER .input-icon img {
+    width: 20px;
+    height: auto;
+    margin-left: 40px;
+}
+.login-center {
+    height: 600px;
+    width: 900px;
+    display: flex;
+    background-color: #EEF0EB;
+    overflow: hidden;
+}
+.login-image {
+    width: 80%;
+    height: 100%;
+    background-image: url('../images/document.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.loginTOP {
+    flex-direction: row;
+    width: 75%;
+    height: 100%;
+
+}
+
+.login-logo{
+    width:100%;
+    height:30%;
+    background-image: url('../images/top.png');
+    background-size: 40% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-justify: auto;
+}
+.login-title{
+    height:17%;
+    width:100%;
+    text-align: center;
+    font-size:16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.login-title1{
+    height:15%;
+    width:100%;
+    flex-direction: row;
+    text-align: center;
+    font-size:16px;
+}
+.register-h1 {
+    font-family: 'Inter', sans-serif;
+    color: #284B63;
+}
+.inputFI {
+    width: 100%;
+    height: 15%;
+    background-color: #EEF0EB;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+.inputFI2 {
+    width: 100%;
+    height: 15%;
+    background-color: #EEF0EB;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+}
+.inputFI9 {
+    width: 100%;
+    height: 15%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 18px;
+}
+.inputFI10 {
+    width: 100%;
+    height: 15%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 10px;
+}
+.inputFI input {
+    height: 42px;
+    border-radius: 6px;
+    background-color: #E5E5E5;
+    width: 70%;
+    padding-left: 40px;
+    border:none;
+}
+.inputFI2 input {
+    height: 42px;
+    border-radius: 6px;
+    background-color: #E5E5E5;
+    width: 70%;
+    padding-left: 40px;
+    border:none;
+}
+.inputFI9 input {
+    height: 32px;
+    border-radius: 6px;
+    background-color: #EDEFF2;
+    width: 70%;
+    padding-left: 40px;
+    border:none;
+}
+.inputFI10 input {
+    height: 32px;
+    border-radius: 6px;
+    background-color: #EDEFF2;
+    width: 70%;
+    padding-left: 40px;
+    border:none;
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.mail {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.inputFI3 .input-icon,
+.inputFI5 .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjust this value as needed */
+    transform: translateY(-50%);
+}
+
+.input-icon img {
+    width: 20px;
+    height: auto;
+    margin-left:40px;
+}
+.buttonss {
+    width: 100%;
+    height: 12px;
+    background-color: #EEF0EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+}
+.button3 {
+    width: 100%;
+    height: 12px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.butonss1 {
+    width: 100%;
+    height: 12px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.loginB {
+    width: 100%;
+    height: 12%;
+    background-color: #EEF0EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size:16px;
+}
+.loginB1 {
+    width: 100%;
+    height: 12%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size:16px;
+}
+.loginB2 {
+    width: 100%;
+    height: 12%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size:16px;
+}
+.button2 {
+    width: 40%;
+    height: 33.8px;
+    border-radius: 11px;
+    background-color: #FE667A;
+    color: #FFFFFF;
+    opacity: 86%;
+    margin-top:30px;
+    border:none;
+    outline:none;
+    font-size:13px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button6 {
+    width: 40%;
+    height: 33.8px;
+    border-radius: 11px;
+    background-color: #FE667A;
+    color: #FFFFFF;
+    opacity: 86%;
+    margin-top:30px;
+    border:none;
+    outline:none;
+    font-size:13px;
+    font-weight: 600;
+}
+.button1 {
+    width: 40%;
+    height: 33.8px;
+    border-radius: 11px;
+    background-color: #284B63;
+    color: #FFFFFF;
+    opacity: 86%;
+    margin-top:30px;
+    border:none;
+    font-weight: 600;
+    font-size:13px;
+    outline:none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button11{
+    width: 40%;
+    height: 33.8px;
+    border-radius: 11px;
+    background-color: #FE667A;
+    color: #FFFFFF;
+    opacity: 86%;
+    margin-top:30px;
+    border:none;
+    font-weight: 600;
+    font-size:13px;
+    outline:none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputFIREGISTER {
+    width: 100%;
+    height: 15%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -10px;
+}
+
+.inputFI input::placeholder {
+    opacity: 0.5;
+    font-weight:900;
+    font-size:18px;
+}
+.inputFI2 input::placeholder {
+    opacity: 0.5;
+    font-weight:900;
+    font-size:18px;
+}
+.inputFI9 input::placeholder {
+    opacity: 0.5;
+    font-weight:900;
+    font-size:18px;
+}
+.inputFI10 input::placeholder {
+    opacity: 0.5;
+    font-weight:900;
+    font-size:18px;
+}
+.inputFI3 input::placeholder {
+    opacity: 0.5;
+    font-weight:900;
+    font-size:18px;
+}
+.inputFI5 input::placeholder {
+    opacity: 0.5;
+    font-weight:900;
+    font-size:18px;
+}
+
+.wat {
+    width: 40%;
+    height: 33.8px;
+    border-radius: 11px;
+    background-color: #FE667A;
+    opacity: 86%;
+    outline:none;
+    border:none;
+    font-weight:600;
+    font-size:13.5px;
+}
+.error-message{
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+}
+.succ-message{
+    font-size: 14px;
+    color: yellowgreen;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .login-main {
+        flex-direction: column;
+        height: 160%;
+    }
+    .inputFIREGISTER {
+        background-color: transparent;
+    }
+
+    .inputFIREGISTER input {
+        width: 90%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        border-radius: 7px;
+        height: 50px;
+    }
+
+    .inputFIREGISTER input::placeholder {
+        padding-left: 30px;
+        size: 15px;
+        opacity: 0.5;
+        color: #000000;
+    }
+    .login-center {
+        width: 220%;
+        height: auto;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+    }
+    .login-image {
+        display: none;
+    }
+    .login-main {
+        background-color: transparent;
+    }
+    .login-h1 {
+        color: #FFFFFF;
+        margin-bottom: 70px;
+        font-weight: bolder;
+        text-align: center; /* Center text in h1 element */
+    }
+    .login-logo {
+        background-image: url('../images/top.png');
+        background-size: 140px auto; /* Increase the size of the logo */
+        height: 130px;
+        background-position: center;
+        width: 100%;
+    }
+    .inputFI input, .inputFI2 input {
+        width: 90%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        border-radius: 7px;
+        height: 50px;
+    }
+    .inputFI, .inputFI2 {
+        background-color: transparent;
+    }
+    .button1, .button2 {
+        display: inline-block;
+        width: 50%; /* Adjusted width for centered text */
+        height: 30px;
+        margin: 10px auto;
+        background-color: #FE667A;
+        color: #FFFFFF;
+        padding: 20px;
+        text-align: center;
+        margin-top: 30px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        font-size:20px;
+        font-weight:900;
+    }
+    .buttonss, .loginB {
+        background-color: transparent;
+        /* margin-top: 30px; */
+        text-align: center; /* Center text in buttons */
+    }
+    .input-icon img {
+        margin-left: 6px;
+        width: 30px;
+    }
+    .inputFI input::placeholder, .inputFI2 input::placeholder {
+        padding-left: 30px;
+        size: 15px;
+        opacity: 0.5;
+        color: #000000;
+    }
+    .login-title{
+        height:0px;
+        margin-bottom: 160px;
+    }
+    .button3{
+        background-color:transparent;
+    }
+    .button6{
+        display: inline-block;
+        width: 50%; /* Adjusted width for centered text */
+        height: 30px;
+        margin: 10px auto;
+        background-color: #FE667A;
+        color: #FFFFFF;
+        padding: 20px;
+        text-align: center;
+        margin-top: 30px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        font-size:23px;
+        font-weight:900;
+    }
+    .inputFI9, .inputFI10 {
+        background-color: transparent;
+    }
+    .inputFI9 input::placeholder, .inputFI10 input::placeholder {
+        padding-left: 30px;
+        size: 15px;
+        opacity: 0.5;
+        color: #000000;
+    }
+    .inputFI9 input, .inputFI10 input {
+        width: 90%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        border-radius: 7px;
+        height: 50px;
+    }
+    .loginB1{
+        margin-bottom: 35px ;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .login-center {
+        width: 100%; /* Adjusted width for small screens */
+        height: auto; /* Adjusted height for small screens */
+        background-image: url('../images/document.jpg'); /* Set the background image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height:100vh;
+    }
+    .new-user-main{
+        width:100%;
+    }
+    .new-user-text-input{
+        font-size:15px;
+    }
+    .edit-user-h2{
+        font-size:24px;
+    }
+    .admin-info-box{
+        width:100%;
+        height:25vh;
+    }
+    .user-roles-inside{
+        display:none;
+    }
+    .admin-information{
+        flex-wrap:wrap;
+    }
+    .admin-box-one{
+        height:70vh;
+    }
+    .admin-main{
+        height:120vh;
+    }
+    .admin-center-box{
+        height:95vh;
+        margin-top:350px;
+    }
+    .user-roles-container{
+        width:100%;
+        display:hidden;
+        background-color:transparent;
+    }
+    
+    .user-roles-text{
+        font-size:1em;
+        display:none;
+    }
+    .search-icon{
+        margin-right:12px;
+    }
+    .user-lietotaji{
+        font-size:1em;
+        display:none;
+    }
+    .user-counter{
+        width:100%;
+    }
+    .user-info{
+        font-size:0.55em;
+    }
+    .user-search-bar-container{
+        justify-content: center;
+        width:100%;
+    }
+    
+
+    .inputFI input, .inputFI2 input {
+        width: 90%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        border-radius: 7px;
+        height: 50px;
+        margin-top:30px;
+    }
+
+    .inputFI input, .inputFI2 input {
+        width: 90%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        border-radius: 7px;
+        height: 50px;
+        margin-top:30px;
+    }
+
+    .button1, .button2 {
+        width: 50%;
+        height: 30px;
+        margin: 10px auto;
+        font-size: 13px;
+        margin-top:40px;
+    }
+
+    .button6 {
+        width: 50%;
+        height: 30px;
+        margin: 10px auto;
+        font-size: 13.5px;
+        font-weight:900;
+    }
+
+    .input-icon img {
+        margin-left: 6px;
+        width: 30px;
+        margin-top:30px;
+    }
+
+    .inputFI input::placeholder, .inputFI2 input::placeholder {
+        padding-left: 30px;
+        font-size: 15px;
+    }
+
+    .login-title {
+        height: 50px;
+        margin-bottom: 30px;
+    }
+    .loginB2{
+    width: 100%;
+    height: 5%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size:16px;
+    }
+    .button11 {
+        width: 50%;
+        height: 38px;
+        margin: 10px auto;
+        font-size: 13px;
+        margin-top:35px;
+    }
+    .register-h1 {
+        font-family: 'Inter', sans-serif;
+        color: #FFFFFF;
+    }
+    .login-title1{
+        height:5%;
+    }
+    .user-button-saglabat{
+        width:100%;
+    }
+    .user-button-save{
+        width:60%;
+    }
+    .user-center{
+        width:100%;
+    }
+    .user-center-info-container{
+        height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .user-name{
+        font-size:15px;
+        width:35%;
+        flex-direction: column;
+        margin:0;
+    }
+    .user-info.user-last-name {
+        width: 100%;
+        margin-left: 5px;
+        display: flex;
+        font-size:10px;
+    }
+    .user-button{
+        font-size:0.5em;
+        padding-right: 0;
+        padding-left: 0;
+
+    }
+    .user-button-edit{
+        font-size:10px;
+    }
+
+  
+    .settings-icon{
+        background-size:10px;
+        padding-left:3px;
+        font-size:8.5px;
+        width:100%;
+    }
+    .user-dropdown{
+        font-size:8px;
+        height:3vh;
+    }
+    .dropdown-arrow1{
+        font-size:10px;
+    }
+}
+
+
