@@ -15,12 +15,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
 
     // Check if $conn is valid before proceeding with the database operations
-    if ($conn && !empty($data['id']) && !empty($data['daudzums']) && !empty($data['plaukts'])) {
+    if ($conn && !empty($data['id'])) {
         $id = $data['id'];
-        $newDaudzums = $data['daudzums'];
-        $newPlaukts = $data['plaukts'];
 
-        $updateSql = "UPDATE preces SET daudzums = '$newDaudzums', plaukts = '$newPlaukts' WHERE id = $id";
+        // Check for each field if it exists in the request and update accordingly
+        $updateSql = "UPDATE preces SET ";
+
+        if (isset($data['daudzums'])) {
+            $newDaudzums = $data['daudzums'];
+            $updateSql .= "daudzums = '$newDaudzums', ";
+        }
+        if (isset($data['plaukts'])) {
+            $newPlaukts = $data['plaukts'];
+            $updateSql .= "plaukts = '$newPlaukts', ";
+        }
+        if (isset($data['nosaukums'])) {
+            $newNosaukums = $data['nosaukums'];
+            $updateSql .= "nosaukums = '$newNosaukums', ";
+        }
+        if (isset($data['razotajs'])) {
+            $newRazotajs = $data['razotajs'];
+            $updateSql .= "razotajs = '$newRazotajs', ";
+        }
+        if (isset($data['apraksts'])) {
+            $newApraksts = $data['apraksts'];
+            $updateSql .= "apraksts = '$newApraksts', ";
+        }
+        if (isset($data['kategorija'])) {
+            $newKategorija = $data['kategorija'];
+            $updateSql .= "kategorija = '$newKategorija', ";
+        }
+        if (isset($data['cena'])) {
+            $newCena = $data['cena'];
+            $updateSql .= "cena = '$newCena', ";
+        }
+
+        // Remove the trailing comma and space
+        $updateSql = rtrim($updateSql, ', ');
+
+        $updateSql .= " WHERE id = $id";
 
         $result = $conn->query($updateSql);
 

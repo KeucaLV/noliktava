@@ -18,7 +18,8 @@
   grid-template-rows: repeat(2, 1fr);
   width: 90vw;
   max-width: 1650px;
-  height: auto; 
+  height: auto;
+  min-height: 600px;
   border-radius: 6px;
   box-shadow: 0 -8px 12px rgba(0, 0, 0, 0.1), 0 12px 20px rgba(0, 0, 0, 0.6);
   margin-top: 75px;
@@ -88,7 +89,7 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #FFFFFF;
     border-bottom: 1px solid #000000;
     width: 100%;
   }

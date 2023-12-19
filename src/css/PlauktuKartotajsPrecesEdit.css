@@ -14,8 +14,7 @@
   }
   
   .PrecesEdit {
-    min-width: 20vh;
-    width: 35vh;
+    width: 750px;
     height: auto; 
     border-radius: 6px;
     box-shadow: 0 -8px 12px rgba(0, 0, 0, 0.1), 0 12px 20px rgba(0, 0, 0, 0.6);
@@ -36,23 +35,44 @@
   .ItemDetails p {
     margin: 8px 0;
   }
+
+  .ItemDetails input[type="text"] {
+    width: 97.5%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
   
-  @media (max-width: 767px) {
+  /* Style select dropdown */
+  .ItemDetails select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Style button */
+  .ItemDetails button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ItemDetails button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 800px) {
     .PrecesEdit {
       width: 70vw; /* 70% of the screen width for mobile */
       min-width: unset; /* Remove min-width for mobile */
       max-width: unset; /* Remove max-width for mobile */
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  
-  /* Desktop Styles */
-  @media (min-width: 768px) {
-    .PrecesEdit {
-      width: 35vw; /* 35% of the screen width for desktop */
-      min-width: 20vh; /* Set min-width for desktop */
-      max-width: unset; /* Remove max-width for desktop */
       margin-left: auto;
       margin-right: auto;
     }
