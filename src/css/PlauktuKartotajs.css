@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.PlauktuKartotajs {
+    width: 100vw;
+    height: 100vh; /* Subtract header height */
+    overflow: hidden;
+  }
+  
+  .PlauktuKartotajsBG {
+    width: 100%;
+    height: calc(100% - 125px); /* Occupy the available height */
+    overflow: hidden;
+    margin-top: 125px;
+  }
+  
+  .PlauktuKartotajsBG img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire container */
+  }
+  
+  .darkOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* Adjust opacity as needed */
+  }
+  
+  .Text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 4;
+  }
+  
+  .Text h1 {
+    font-family: 'Inknut Antiqua', serif;
+    color: white; /* Change text color */
+    font-size: 3rem; /* Change font size for mobile */
+  }
+  
+  @media (max-width: 768px) {
+    .PlauktuKartotajs {
+      height: 100vh; /* Adjust for mobile header height */
+    }
+  
+    .Text h1 {
+      font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+  }
