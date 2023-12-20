@@ -10,7 +10,6 @@ $sortOptions = [
     "Nosaukums descending" => "nosaukums DESC",
     "Ražotājs ascending" => "razotajs ASC",
     "Ražotājs descending" => "razotajs DESC"
-    // Add more sorting options as needed based on your table columns
 ];
 
 echo json_encode($sortOptions);
