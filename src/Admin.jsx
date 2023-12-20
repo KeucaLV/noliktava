@@ -14,11 +14,11 @@ function Admin() {
                     <div className="admin-top"><p100>Admin</p100></div>
 
                     <div className="admin-information">
-                        <div className="admin-info-box" onClick={() => handleContainerClick('/users-page')}>
+                        <div className="admin-info-box" onClick={() => handleContainerClick('/users')}>
                             <div className="admin-icon-box"></div>
                             <div className='admin-text-box'>Lietotāji</div>
                         </div>
-                        <div className="admin-info-box" onClick={() => handleContainerClick('/new-user-page')}>
+                        <div className="admin-info-box" onClick={() => handleContainerClick('/Newuser')}>
                             <div className="admin-icon-box2"></div>
                             <div className='admin-text-box'>Jauns lietotājs</div>
                         </div>

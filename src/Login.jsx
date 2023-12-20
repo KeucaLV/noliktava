@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 import './style/Login.css';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from './UserContext'; // Update the path accordingly
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate();
+  const { login } = useUser(); // Get the login function from the user context
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     // Basic frontend validation
     if (!username || !password) {
       setError('Please enter both username and password.');
       return;
     }
-
+  
     try {
       const response = await fetch('http://localhost:8888/api/api.php', {
         method: 'POST',
@@ -28,40 +30,69 @@ function Login() {
           password: password,
         }),
       });
-
-      const responseBody = await response.text();
-      console.log('Response Body:', responseBody);
-
+  
+      console.log('Response status:', response.status);
+  
       if (!response.ok) {
         // Handle non-success status codes
         console.error('Request failed with status:', response.status);
         setError('Invalid username or password.');
         return;
       }
-
-      // Parse the response body as JSON only once
-      const data = JSON.parse(responseBody);
-
-      if (data.success) {
-        // Login successful, redirect based on user role
-        console.log('Login successful');
-
-        if (data.isAdmin) {
-          // Redirect to the admin page
-          navigate('/admin');
-        } else {
-          // Redirect to the user page
-          navigate('/users');
+  
+      const data = await response.text(); // Read the response as text
+  
+      console.log('Raw response data:', data);
+  
+      // Split the concatenated JSON responses
+      const jsonResponses = data.split('}{');
+  
+      // Process each JSON response separately
+      jsonResponses.forEach((jsonData, index) => {
+        // Reconstruct the JSON format
+        if (index < jsonResponses.length - 1) {
+          jsonData += '}';
         }
-      } else {
-        console.error('Login failed:', data.message);
-        setError('Invalid username or password.');
-      }
+        if (index > 0) {
+          jsonData = '{' + jsonData;
+        }
+  
+        // Now try to parse the response as JSON
+        try {
+          const parsedData = JSON.parse(jsonData);
+          console.log('Parsed JSON data:', parsedData);
+  
+          if (parsedData.success) {
+            // Login successful, set user context
+            console.log('Login successful');
+            login({
+              username: parsedData.username,
+              role: parsedData.role,
+            });
+  
+            // Redirect based on user role
+            if (parsedData.isAdmin) {
+              // Redirect to the admin page after setting the user context
+              navigate('/admin');
+            } else {
+              // Redirect to the user page after setting the user context
+              navigate('/users');
+            }
+          } else {
+            console.error('Login failed:', parsedData.message);
+            setError('Invalid username or password.');
+          }
+        } catch (jsonError) {
+          console.error('Error parsing JSON:', jsonError);
+          setError('An unexpected error occurred. Please try again later.');
+        }
+      });
     } catch (error) {
       console.error('Error:', error);
-      setError('An unexpected error occurred.');
+      setError('An unexpected error occurred. Please try again later.');
     }
   };
+  
 
   return (
     <div className="login-main">

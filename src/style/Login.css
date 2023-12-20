@@ -1128,7 +1128,9 @@ p100{
         width:100%;
     }
     .user-button-save{
-        width:60%;
+        width:30%;
+        font-size:0.7rem;
+        height:30
     }
     .user-center{
         width:100%;
@@ -1169,12 +1171,18 @@ p100{
         font-size:8.5px;
         width:100%;
     }
+    .user-center-info-container {
+    width: 90%
+}
     .user-dropdown{
         font-size:8px;
         height:3vh;
     }
     .dropdown-arrow1{
         font-size:10px;
+    }
+    p100{
+        font-size:20px;
     }
 }
 
