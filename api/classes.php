@@ -251,29 +251,36 @@ class Database {
         }
     }
     public function authenticate($username, $password) {
-    // Validate the input
-    if (empty($username) || empty($password)) {
-        return false;
+        // Validate the input
+        if (empty($username) || empty($password)) {
+            echo json_encode(['success' => false, 'message' => 'Invalid username or password.']);
+            return false;
+        }
+    
+        // Check if the user with the given username exists
+        $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        if ($result->num_rows === 0) {
+            echo json_encode(['success' => false, 'message' => 'User not found.']);
+            return false; // User not found
+        }
+    
+        $user = $result->fetch_assoc();
+    
+        // Compare the provided password with the stored hashed password
+        if (password_verify($password, $user['password'])) {
+            // Authentication successful, return the user's role
+            echo json_encode(['success' => true, 'role' => $user['role_id']]);
+            return $user['role_id'];
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Incorrect password.']);
+            return false; // Incorrect password
+        }
     }
-
-    // Check if the user with the given username exists
-    $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows === 0) {
-        return false; // User not found
-    }
-
-    $user = $result->fetch_assoc();
-
-    // Compare the provided password with the stored plaintext password
-    if ($password === $user['password']) {
-        return true; // Authentication successful
-    } else {
-        return false; // Incorrect password
-    }
-}
+    
+    
 }
 ?>
