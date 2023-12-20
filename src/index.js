@@ -7,17 +7,25 @@ import PlauktuKartotajsIzvietot from './components/PlauktuKartotajsIzvietot';
 import PlauktuKartotajsPreces from './components/PlauktuKartotajsPreces';
 import PlauktuKartotajsPrecesEdit from './components/PlauktuKartotajsPrecesEdit';
 import PlauktuKartotajsPrecesMore from './components/PlauktuKartotajsPrecesMore';
+import NoliktavuDarbinieks from './components/NoliktavuDarbinieks';
+import NoliktavuDarbinieksPievienotPreci from './components/NoliktavuDarbinieksPievienotPreci';
+import NoliktavuDarbinieksPasutit from './components/NoliktavuDarbinieksPasutit'
+import NoliktavuDarbinieksPreces from './components/NoliktavuDarbinieksPreces';
 
 function App() {
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<PlauktuKartotajs />} />
-        <Route path="/izvietot" element={<PlauktuKartotajsIzvietot />} />
-        <Route path="/preces" element={<PlauktuKartotajsPreces />} />
-        <Route path="/precesEdit/:id" element={<PlauktuKartotajsPrecesEdit />} />
-        <Route path="/precesMore/:id" element={<PlauktuKartotajsPrecesMore />} />
+        <Route path="/plauktuKartotajs" element={<PlauktuKartotajs />} />
+        <Route path="/plauktuKartotajsIzvietot" element={<PlauktuKartotajsIzvietot />} />
+        <Route path="/plauktuKartotajsPreces" element={<PlauktuKartotajsPreces />} />
+        <Route path="/plauktuKartotajsPrecesEdit/:id" element={<PlauktuKartotajsPrecesEdit />} />
+        <Route path="/plauktuKartotajsPrecesMore/:id" element={<PlauktuKartotajsPrecesMore />} />
+        <Route path="/noliktavuDarbinieks" element={<NoliktavuDarbinieks />} />
+        <Route path="/noliktavuDarbinieksPievienotPreci" element={<NoliktavuDarbinieksPievienotPreci />} />
+        <Route path="/noliktavuDarbinieksPasutit" element={<NoliktavuDarbinieksPasutit />} />
+        <Route path="/noliktavuDarbinieksPreces" element={<NoliktavuDarbinieksPreces />} />
       </Routes>
     </Router>
   );

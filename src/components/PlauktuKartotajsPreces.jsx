@@ -27,11 +27,11 @@ function PlauktuKartotajsPreces() {
   };
 
   const handleEditClick = (id) => {
-    navigate(`/precesEdit/${id}`);
+    navigate(`/plauktuKartotajsPrecesEdit/${id}`);
   };
 
   const handleMoreClick = (id) => {
-    navigate(`/precesMore/${id}`);
+    navigate(`/plauktuKartotajsPrecesMore/${id}`);
   };
 
   const handlePlauktsChange = (event) => {

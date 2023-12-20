@@ -10,11 +10,32 @@ function Header() {
       </div>
 
       <div className="header-buttons">
-        <Link to="/izvietot" className="header-link">
+        <Link to="/plauktuKartotajsIzvietot" className="header-link">
           <button>Izvietot</button>
         </Link>
-        <Link to="/preces" className="header-link">
+
+        <Link to="/plauktuKartotajsPreces" className="header-link">
           <button>Preces</button>
+        </Link>
+
+        <Link to="/noliktavuDarbinieks" className="header-link">
+          <button>Darbinieks</button>
+        </Link>
+
+        <Link to="/plauktuKartotajs" className="header-link">
+          <button>Kartotajs</button>
+        </Link>
+
+        <Link to="/noliktavuDarbinieksPreces" className="header-link">
+          <button>Darbinieks Preces</button>
+        </Link>
+
+        <Link to="/noliktavuDarbinieksPievienotPreci" className="header-link">
+          <button>Darbinieks Pievienot</button>
+        </Link>
+
+        <Link to="/noliktavuDarbinieksPasutit" className="header-link">
+          <button>Darbinieks Pasutit</button>
         </Link>
       </div>
     </div>

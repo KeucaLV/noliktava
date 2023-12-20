@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2023 at 10:01 AM
+-- Generation Time: Dec 20, 2023 at 02:07 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -51,6 +51,33 @@ INSERT INTO `kategorijas` (`id`, `kategorija`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pasutit`
+--
+
+CREATE TABLE `pasutit` (
+  `id` int(11) NOT NULL,
+  `razotajs` varchar(200) NOT NULL,
+  `nosaukums` varchar(100) NOT NULL,
+  `daudzums` int(11) NOT NULL,
+  `dateOrdered` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pasutit`
+--
+
+INSERT INTO `pasutit` (`id`, `razotajs`, `nosaukums`, `daudzums`, `dateOrdered`) VALUES
+(1, 'GeForce', 'RTX 3060', 6, '13.12.2023'),
+(2, 'AMD', 'Radeon RX 7000', 3, '12.12.2023'),
+(3, 'Intel', 'I5', 9, '10.12.2023'),
+(4, 'Intel', 'i5-10400F', 3, '19.12.2023'),
+(5, 'Intel', 'i5-10400F', 40, '19.12.2023'),
+(6, 'Intel', 'i5-10400F', 10, '19.12.2023'),
+(7, 'Intel', 'i5-10400F', 3, '20.12.2023');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `plaukts`
 --
 
@@ -82,6 +109,7 @@ CREATE TABLE `preces` (
   `razotajs` varchar(100) NOT NULL,
   `apraksts` varchar(200) NOT NULL,
   `kategorija` int(11) NOT NULL,
+  `image` varchar(150) NOT NULL,
   `daudzums` int(11) NOT NULL,
   `cena` float NOT NULL,
   `plaukts` int(11) NOT NULL
@@ -91,17 +119,17 @@ CREATE TABLE `preces` (
 -- Dumping data for table `preces`
 --
 
-INSERT INTO `preces` (`id`, `nosaukums`, `razotajs`, `apraksts`, `kategorija`, `daudzums`, `cena`, `plaukts`) VALUES
-(5, 'asdba22', 'ajsdbajd', 'askdbaskbd', 1, 0, 300, 1),
-(7, 'fgjfgjd', 'ajsdbajd', 'askdbaskbd', 3, 0, 300, 2),
-(8, 'asdbad', 'ajsdbajd', 'askdbaskbd', 10, 0, 300, 3),
-(9, 'Nvidia RTX 20701', 'Nvidia1', 'laba manta1', 6, 3, 700, 2),
-(10, 'asdasfgfh', 'dfgjhdgmcv', 'cvbmcvm', 10, 3, 700, 2),
-(11, '12r131f', '23d1f24f1', '123df32f', 5, 0, 300, 1),
-(12, '34g3f3d', '134gwsdf', '3fsdfsqdf', 5, 0, 300, 2),
-(13, '34tf43vavas1', '4rqda1', '143g31gdafa', 8, 0, 300, 3),
-(14, '4143g134g134gds', '134g134gdsafasdf', '4g423gsdgasdv1', 8, 3, 700, 2),
-(15, 'fshheha', 'zvbzcvb', 'ngfnsg', 2, 3, 700, 2);
+INSERT INTO `preces` (`id`, `nosaukums`, `razotajs`, `apraksts`, `kategorija`, `image`, `daudzums`, `cena`, `plaukts`) VALUES
+(5, 'asdba22', 'ajsdbajd', 'askdbaskbd', 1, '', 0, 300, 1),
+(7, 'fgjfgjd', 'ajsdbajd', 'askdbaskbd', 5, '', 0, 300, 2),
+(8, 'asdbad', 'ajsdbajd', 'askdbaskbd', 10, '', 0, 300, 3),
+(9, 'Nvidia RTX 20701', 'Nvidia1', 'laba manta1', 6, '', 3, 700, 2),
+(10, 'asdasfgfh', 'dfgjhdgmcv', 'cvbmcvm', 10, '', 3, 700, 2),
+(11, '12r131f', '23d1f24f1', '123df32f', 5, '', 0, 300, 1),
+(12, '34g3f3d', '134gwsdf', '3fsdfsqdf', 5, '', 0, 300, 2),
+(13, '34tf43vavas1', '4rqda1', '143g31gdafa', 8, '', 0, 300, 3),
+(14, '4143g134g134gds', '134g134gdsafasdf', '4g423gsdgasdv1', 8, '', 3, 700, 2),
+(15, 'fshheha', 'zvbzcvb', 'ngfnsg', 2, '', 3, 700, 2);
 
 --
 -- Indexes for dumped tables
@@ -111,6 +139,12 @@ INSERT INTO `preces` (`id`, `nosaukums`, `razotajs`, `apraksts`, `kategorija`, `
 -- Indexes for table `kategorijas`
 --
 ALTER TABLE `kategorijas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pasutit`
+--
+ALTER TABLE `pasutit`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -138,6 +172,12 @@ ALTER TABLE `kategorijas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `pasutit`
+--
+ALTER TABLE `pasutit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `plaukts`
 --
 ALTER TABLE `plaukts`
@@ -147,7 +187,7 @@ ALTER TABLE `plaukts`
 -- AUTO_INCREMENT for table `preces`
 --
 ALTER TABLE `preces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Constraints for dumped tables

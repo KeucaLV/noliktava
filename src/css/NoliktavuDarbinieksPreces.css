@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.preces-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plaukts {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    position: relative;
+    border-radius: 10px;
+    background: rgb(237,237,233);
+    background: radial-gradient(circle, rgba(237,237,233,1) 0%, rgba(168,168,168,1) 100%);
+}
+
+.plauktaTeksts{
+    margin-top: 20px;
+    margin-left: 70px;
+    align-self: flex-start;
+}
+
+.preces-box {
+    display: flex;
+    flex: 40%;
+    max-width: 280px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+}
+
+img{
+    width: 170px;
+
+}
+
+.delete-preces, .edit-preces {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.edit-preces:hover {
+    background-color: #2d7d2f;
+}
+
+.delete-preces {
+    background-color: #f44336;
+}
+
+.delete-preces:hover {
+    background-color: #cc1204;
+}
+
+.flex-row{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px;
+}
+
+.dati{
+    font-family: 'Inknut Antiqua', serif, 'Merriweather', serif;
+    font-size: 17px;
+    margin: -5px;
+    font-weight: 400;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .flex-row{
+        flex-direction: column;
+    }
+
+
+}

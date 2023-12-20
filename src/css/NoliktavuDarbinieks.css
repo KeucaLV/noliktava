@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    position: relative;
+    font-family: 'Inknut Antiqua', serif;
+    font-family: 'Merriweather', serif;
+}
+
+.headerSub{
+    display: flex;
+    height: 100px;
+    background-color: white;
+    border: 2px solid;
+}
+
+.noliktava-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.noliktava-main::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.hrx.lv/uploads/2019/04/20120718-003.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    filter: brightness(0.3);
+    z-index: -1;
+}
+
+.headMessage{
+    font-size: 54px;
+    color: white;
+    margin: 20px;
+}
+
+.subMessage{
+    font-size: 38px;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .headMessage{
+        font-size: 18px;
+    }
+    .subMessage{
+        font-size: 15px;
+    }
+}
