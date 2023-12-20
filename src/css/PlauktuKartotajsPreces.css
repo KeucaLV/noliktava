@@ -1,0 +1,219 @@
+.PlauktuKartotajsPreces{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 125px);
+    margin-top: 125px;
+    align-items: center;
+}
+.nez{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.Preces {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 90vw;
+  max-width: 1650px;
+  height: auto;
+  min-height: 600px;
+  border-radius: 6px;
+  box-shadow: 0 -8px 12px rgba(0, 0, 0, 0.1), 0 12px 20px rgba(0, 0, 0, 0.6);
+  margin-top: 75px;
+  position: relative;
+  overflow-y: auto;
+  margin-bottom: 25px;
+}
+
+.item {
+  min-height: 300px;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.ItemCredentials {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ItemTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ItemInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.Column {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ItemButtons {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.Preces > * {
+  box-sizing: border-box;
+}
+
+.Preces > :nth-child(3n + 1) {
+  border-right: 1px solid black;
+}
+
+.Preces > :nth-child(3n + 2) {
+  border-right: 1px solid black;
+}
+  
+  .SearchContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #000000;
+    width: 100%;
+  }
+  
+  .SearchInput {
+    padding: 8px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+  }
+  
+  .Dropdown {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+  }
+
+  option{
+    width: 100%;
+  }
+
+
+  .EditButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .MoreButton {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1100px) {  
+    .SearchContainer {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px; 
+    }
+
+    .SearchInput,
+    .Dropdown {
+      margin-top: 5px;
+      width: 85%;
+    }
+  
+    .SearchInput {
+      margin-right: 0;
+    }
+  }
+
+
+  @media (max-width: 1300px) {
+    .Preces {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      min-height: 1000px;
+      height: auto;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      margin-top: 25px;
+    }
+  
+    .Preces > * {
+      border-right: none;
+      border-bottom: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .Preces > :nth-child(3n + 1) {
+      border-right: 1px solid black;
+    }
+    .Preces > :nth-child(2n + 1) {
+      border-right: 1px solid black;
+    }
+    .Preces > :nth-child(2n + 2) {
+      border-right: none;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .Preces {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      min-height: 1000px;
+      height: auto;
+      overflow-y: scroll; 
+      overflow-x: hidden;
+      margin-top: 25px;
+    }
+  
+    .Preces > * {
+      border-right: none;
+    }
+
+    .Preces > :nth-child(3n + 1) {
+      border-right: none;
+    }
+    
+    .Preces > :nth-child(3n + 2) {
+      border-right: none;
+    }
+    .Preces > :nth-child(3n + 3) {
+      border-right: none;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .ItemInfo {
+      font-size: 17px;
+      line-height: 1.3;
+    }
+  }

@@ -1,0 +1,60 @@
+.PlauktuKartotajsPrecesMore {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: calc(100vh - 125px);
+  margin-top: 125px;
+  align-items: center;
+}
+
+.nez {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.PrecesMore {
+  min-width: 20vh;
+  width: 35vh;
+  height: auto; 
+  border-radius: 6px;
+  box-shadow: 0 -8px 12px rgba(0, 0, 0, 0.1), 0 12px 20px rgba(0, 0, 0, 0.6);
+  margin-top: 75px;
+  position: relative;
+  margin-bottom: 25px;
+}
+  
+.ItemDetails {
+  padding: 20px;
+}
+
+.ItemDetails h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.ItemDetails p {
+  margin: 8px 0;
+}
+
+@media (max-width: 767px) {
+  .PrecesMore {
+    width: 70vw; /* 70% of the screen width for mobile */
+    min-width: unset; /* Remove min-width for mobile */
+    max-width: unset; /* Remove max-width for mobile */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .PrecesMore {
+    width: 35vw; /* 35% of the screen width for desktop */
+    min-width: 20vh; /* Set min-width for desktop */
+    max-width: unset; /* Remove max-width for desktop */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+  
