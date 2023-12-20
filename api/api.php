@@ -34,7 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $authenticated = $database->authenticate($username, $password);
 
             if ($authenticated) {
-                echo json_encode(['success' => true]);
+                // Start a session and store user role
+                session_start();
+                $_SESSION['role'] = $database->getUserRole($username); // Adjust this based on your database structure
+
+                echo json_encode(['success' => true, 'role' => $_SESSION['role']]);
                 exit;
             } else {
                 http_response_code(401); // Unauthorized
