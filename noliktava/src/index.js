@@ -8,14 +8,20 @@ import Preces from './component/preces';
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                <Route path="/component/darbinieks" element={<Darbinieks />} />
-                <Route path="/component/pievienotPreci" element={<Pievienot />} />
-                <Route path="/component/pasutit" element={<Pasutit />} />
-                <Route path="/component/preces" element={<Preces />} />
-            </Routes>
-        </Router>
+        <>
+            {/*<Darbinieks />*/}
+            {/*<Pievienot />*/}
+            <Pasutit />
+            {/*  <Preces />*/}
+        </>
+        // <Router>
+        //     <Routes>
+        //         <Route path="/component/darbinieks" element={<Darbinieks />} />
+        //         <Route path="/component/pievienotPreci" element={<Pievienot />} />
+        //         <Route path="/component/pasutit" element={<Pasutit />} />
+        //         <Route path="/component/preces" element={<Preces />} />
+        //     </Routes>
+        // </Router>
     );
 }
 

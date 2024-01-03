@@ -11,6 +11,8 @@ function Pasutit() {
     const [productError, setProductError] = useState("");
     const [quantityError, setQuantityError] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
+    const [selectedMonth, setSelectedMonth] = useState("");
+    const [selectedYear, setSelectedYear] = useState("");
 
     useEffect(() => {
         fetchManufacturers();
@@ -61,7 +63,6 @@ function Pasutit() {
         setQuantity(value);
         setQuantityError("");
     };
-
     const calculateDeliveryDays = () => {
         const quantityAsNumber = parseInt(quantity, 10);
 
@@ -74,15 +75,21 @@ function Pasutit() {
 
     const handleDownloadPdf = async () => {
         try {
-            const now = new Date();
-            const day = now.toLocaleString('en-US', { day: '2-digit' });
-            const month = now.toLocaleString('en-US', { month: '2-digit' });
-            const year = now.toLocaleString('en-US', { year: 'numeric' });
-            const formattedTimestamp = `${month}/${day}/${year}`;
+            if (!selectedYear || !selectedMonth) {
+                console.error("Year and month must be selected");
+                return;
+            }
 
-            const pdfName = `${formattedTimestamp}_Pasūtijumi.pdf`;
+            const pdfName = `${selectedYear}_${selectedMonth}_Pasūtijumi.pdf`;
 
-            const response = await fetch("http://localhost/datubazes/noliktava/fpdf/convert-pdf.php");
+            const response = await fetch("http://localhost/datubazes/noliktava/fpdf/convert-pdf.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ year: selectedYear, month: selectedMonth }),
+            });
+
             const blob = await response.blob();
 
             const url = window.URL.createObjectURL(new Blob([blob]));
@@ -127,6 +134,8 @@ function Pasutit() {
                 nosaukums: selectedProduct,
                 daudzums: quantity,
                 dateOrdered: formattedDate,
+                month: month,
+                year: year,
             };
 
             const response = await fetch("http://localhost/datubazes/noliktava/pasutitPreces.php", {
@@ -153,6 +162,25 @@ function Pasutit() {
         <div>
             <div className="headerSub"></div>
             <div className="pievienotMain">
+                {/* Month Dropdown */}
+                <select onChange={(e) => setSelectedMonth(e.target.value)} value={selectedMonth}>
+                    <option className="placeholder">Select Month</option>
+                    {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'].map((month) => (
+                        <option key={month} value={month}>
+                            {month}
+                        </option>
+                    ))}
+                </select>
+                {/* Year Dropdown */}
+                <select onChange={(e) => setSelectedYear(e.target.value)} value={selectedYear}>
+                    <option className="placeholder">Select Year</option>
+                    {/* Add desired range of years */}
+                    {Array.from({ length: 10 }, (_, i) => new Date().getFullYear() - i).map((year) => (
+                        <option key={year} value={year}>
+                            {year}
+                        </option>
+                    ))}
+                </select>
                 <button className="pdfBtn" onClick={handleDownloadPdf}>
                     Download PDF
                 </button>
