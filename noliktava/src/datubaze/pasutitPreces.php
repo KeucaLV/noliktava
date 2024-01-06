@@ -16,6 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $razotajs = htmlspecialchars($cleanData->razotajs);
     $nosaukums = htmlspecialchars($cleanData->nosaukums);
     $daudzums = htmlspecialchars($cleanData->daudzums);
+    $month = $cleanData->month;
+    $year = $cleanData->year;
     
     if (!empty($razotajs) && !empty($nosaukums) && !empty($daudzums)) {
         // Select the current quantity from the "preces" table
@@ -35,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if ($updateResult) {
                 // Insert data into the "pasutit" table
-                $insertQuery = "INSERT INTO `pasutit` (razotajs, nosaukums, daudzums, dateOrdered) VALUES ('$razotajs', '$nosaukums', '$daudzums', '$dateOrdered')";
+                $insertQuery = "INSERT INTO `pasutit` (razotajs, nosaukums, daudzums, dateOrdered, month, year) VALUES ('$razotajs', '$nosaukums', '$daudzums', '$dateOrdered', '$month', '$year')";
                 $insertResult = $obj->conn->query($insertQuery);
 
                 if ($insertResult) {
