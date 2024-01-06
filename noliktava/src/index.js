@@ -5,14 +5,16 @@ import Darbinieks from './component/darbinieks';
 import Pievienot from './component/pievienotPreci';
 import Pasutit from './component/pasutit'
 import Preces from './component/preces';
+import Sanemsana from "./component/sanemsana";
 
 function App() {
     return (
         <>
             {/*<Darbinieks />*/}
             {/*<Pievienot />*/}
-            <Pasutit />
+            {/*<Pasutit />*/}
             {/*  <Preces />*/}
+            <Sanemsana />
         </>
         // <Router>
         //     <Routes>

@@ -11,7 +11,7 @@ function Pasutit() {
     const [productError, setProductError] = useState("");
     const [quantityError, setQuantityError] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
-    const [selectedMonth, setSelectedMonth] = useState("");
+    const [selectedMonth, setSelectedMonth] = useState(1); // Default to January
     const [selectedYear, setSelectedYear] = useState("");
 
     useEffect(() => {
@@ -63,6 +63,7 @@ function Pasutit() {
         setQuantity(value);
         setQuantityError("");
     };
+
     const calculateDeliveryDays = () => {
         const quantityAsNumber = parseInt(quantity, 10);
 
@@ -80,18 +81,18 @@ function Pasutit() {
                 return;
             }
 
-            const pdfName = `${selectedYear}_${selectedMonth}_Pasūtijumi.pdf`;
+            const parsedSelectedYear = parseInt(selectedYear, 10);
+            const pdfName = `${parsedSelectedYear}_${selectedMonth}_Pasūtijumi.pdf`;
 
             const response = await fetch("http://localhost/datubazes/noliktava/fpdf/convert-pdf.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ year: selectedYear, month: selectedMonth }),
+                body: JSON.stringify({ year: parsedSelectedYear, month: selectedMonth }),
             });
-
+            console.log(parsedSelectedYear, selectedMonth);
             const blob = await response.blob();
-
             const url = window.URL.createObjectURL(new Blob([blob]));
 
             const link = document.createElement("a");
@@ -125,7 +126,7 @@ function Pasutit() {
 
             const now = new Date();
             const day = now.toLocaleString("en-US", { day: "2-digit" });
-            const month = now.toLocaleString("en-US", { month: "2-digit" });
+            const month = now.getMonth() + 1; // Get month as a number
             const year = now.toLocaleString("en-US", { year: "numeric" });
             const formattedDate = `${day}.${month}.${year}`;
 
@@ -162,28 +163,34 @@ function Pasutit() {
         <div>
             <div className="headerSub"></div>
             <div className="pievienotMain">
-                {/* Month Dropdown */}
-                <select onChange={(e) => setSelectedMonth(e.target.value)} value={selectedMonth}>
-                    <option className="placeholder">Select Month</option>
-                    {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'].map((month) => (
-                        <option key={month} value={month}>
-                            {month}
-                        </option>
-                    ))}
-                </select>
-                {/* Year Dropdown */}
-                <select onChange={(e) => setSelectedYear(e.target.value)} value={selectedYear}>
-                    <option className="placeholder">Select Year</option>
-                    {/* Add desired range of years */}
-                    {Array.from({ length: 10 }, (_, i) => new Date().getFullYear() - i).map((year) => (
-                        <option key={year} value={year}>
-                            {year}
-                        </option>
-                    ))}
-                </select>
-                <button className="pdfBtn" onClick={handleDownloadPdf}>
-                    Download PDF
-                </button>
+                <div className="pdf-box">
+                    <select onChange={(e) => setSelectedMonth(parseInt(e.target.value, 10))} value={selectedMonth}>
+                       <option className="placeholder">Select a month!</option>
+                        <option value={1}>January</option>
+                        <option value={2}>February</option>
+                        <option value={3}>March</option>
+                        <option value={4}>April</option>
+                        <option value={5}>May</option>
+                        <option value={6}>June</option>
+                        <option value={7}>July</option>
+                        <option value={8}>August</option>
+                        <option value={9}>September</option>
+                        <option value={10}>October</option>
+                        <option value={11}>November</option>
+                        <option value={12}>December</option>
+                    </select>
+                    <select onChange={(e) => setSelectedYear(e.target.value)} value={selectedYear}>
+                        <option className="placeholder">Select Year</option>
+                        {Array.from({ length: 10 }, (_, i) => new Date().getFullYear() - i).map((year) => (
+                            <option key={year} value={year}>
+                                {year}
+                            </option>
+                        ))}
+                    </select>
+                    <button className="pdfBtn" onClick={handleDownloadPdf}>
+                        Download PDF
+                    </button>
+                </div>
                 <h1 className="pievienotMessage">Pasūtīt preci!</h1>
                 <div className="pasutit-Preci-Box">
                     <select onChange={handleManufacturerChange} value={selectedManufacturer}>
